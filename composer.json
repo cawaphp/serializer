@@ -1,0 +1,27 @@
+{
+    "name": "cawaphp/serializer",
+    "description": "Сáша Serializer",
+    "keywords": [
+        "serializer",
+        "json"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "tchiotludo"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cawa\\Serializer\\": "src"
+        }
+    },
+    "require": {
+        "php": "~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.5"
+    }
+}
