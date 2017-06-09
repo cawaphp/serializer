@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-declare (strict_types = 1);
+declare(strict_types = 1);
 
 namespace Cawa\Serializer;
 
@@ -55,7 +55,7 @@ class Serializer
      * @param object $object
      * @param array $data
      *
-     * @return object
+     * @return array
      */
     public static function unserialize($object, array $data)
     {
@@ -67,7 +67,7 @@ class Serializer
     }
 
     /**
-     * Recursive serialize
+     * Recursive serialize.
      *
      * @param object $object
      * @param string $className
