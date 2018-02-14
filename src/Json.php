@@ -38,7 +38,7 @@ abstract class Json
     }
 
     /**
-     * @param $value
+     * @param mixed $value
      * @param int $options
      *
      * @return string
@@ -46,9 +46,20 @@ abstract class Json
     public static function encode($value, int $options = null) : string
     {
         if ($options) {
-            return json_encode($value, $options);
+            $encoded = json_encode($value, $options);
         } else {
-            return json_encode($value);
+            $encoded = json_encode($value);
         }
+
+        if (!is_string($encoded)) {
+            throw new \InvalidArgumentException(sprintf(
+                "Json encode failed (%s) with '%s' and type '%s'",
+                json_last_error(),
+                json_last_error_msg(),
+                gettype($encoded)
+            ));
+        }
+
+        return $encoded;
     }
 }
